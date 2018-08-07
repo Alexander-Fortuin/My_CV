@@ -1,0 +1,341 @@
+@import "partials/colorfunction", "partials/mixins";
+@import url('https://fonts.googleapis.com/css?family=Cabin+Sketch|Monoton&subset=cyrillic,cyrillic-ext,latin-ext,vietnamese');
+html {
+  scroll-behavior: smooth;
+}
+body {
+  // background-color: #ddd;
+  p, li {
+    font-family: 'Orbitron', sans-serif;
+  }
+  header {
+    background-image: url(../images/background.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    height: 20em;
+    padding: 1px;
+
+    h1 {
+      color: white;
+      font-family: 'Press Start 2P', cursive;
+      font-size: 2em;
+    }
+
+    .contact {
+      // left: 90%;
+
+
+      #mydiv {
+        position: absolute;
+        z-index: 9;
+        background-color: rgba(207, 57, 143, 0.6);
+        border: 1px solid #d3d3d3;
+        text-align: center;
+        color: #fff;
+        animation: light 5s infinite;
+        font-family: 'Orbitron', sans-serif;
+        font-weight: bold;
+
+        li {
+          list-style-type: none;
+          margin-left: -33px;
+          padding: 10px;
+          font-weight: normal;
+        }
+        #mydivheader {
+            padding: 10px;
+            cursor: move;
+            z-index: 10;
+            background-color: rgba(207, 57, 143, 0.6);
+            color: #fff;
+        }
+
+
+        @keyframes light {
+          0% {
+             box-shadow: 0px 0px 0px 0px red;
+           }
+          50% {
+            box-shadow: 0px 0px 30px 10px rgba(207, 57, 143, 0.6);
+          }
+          100% {
+             box-shadow: 0px 0px 0px 0px red;
+           }
+        }
+      }
+    }
+
+
+  }
+  //////////////////////////////////////////////////////////////////////////////
+  // navbar
+  #navbar {
+    width: 100%;
+    height: 100px;
+    background-color: rgba(207, 57, 143, 0.6);
+    transition: all 0.3s ease;
+
+    // nav content
+    #menu-center {
+      margin: 0 auto;
+      ul {
+        margin: 15px 0 0 0;
+        li {
+          list-style: none;
+          margin: 0 30px 0 0;
+          display: inline;
+        }
+      }
+    }
+    // active effect
+    .active {
+      font-size: 14px;
+      color: #fff;
+      border: 2px solid white;
+      border-radius: 10px;
+      border-bottom: 0px;
+      padding: 10px;
+      box-shadow: 2px -2px 5px;
+    }
+    // links
+    a {
+      font-size: 14px;
+      color: black;
+      text-decoration: none;
+      line-height: 50px;
+    }
+  }
+  // navbar sticky effect
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+  }
+  //////////////////////////////////////////////////////////////////////////////
+  section {
+    h3 {
+      font-family: 'Titillium Web', sans-serif;
+    }
+    h2 {
+      // font-family: 'Orbitron', sans-serif;
+      // font-family: 'Ruslan Display', cursive;
+      font-family: 'Righteous', cursive;
+    }
+    // Personal Profile
+    #about {
+
+    }
+    // Key Skills
+    #skills {
+      .Title {
+        button {
+          border-radius: 50%;
+          border: 0px;
+          background-color: #e288bc;
+          animation: light 5s infinite;
+          cursor: pointer;
+        }
+
+        @keyframes light {
+          0% {
+             box-shadow: 0px 0px 0px 0px red;
+           }
+          50% {
+            box-shadow: 0px 0px 30px 10px rgba(207, 57, 143, 0.6);
+          }
+          100% {
+             box-shadow: 0px 0px 0px 0px red;
+           }
+        }
+      }
+      #hide {
+        padding: 16px;
+        margin-bottom: 10px;
+        opacity: 0;
+        // display: none;
+        transform: scale(0);
+        transition: .6s ease opacity,.6s ease transform;
+      }
+
+      .myProgress {
+        width: 100%;
+        // background-color: #ddd;
+        background-color: rgba(207, 57, 143, 0.6);
+
+        .level {
+          background: linear-gradient(#fa4228, #bb34bd);
+          width: 0%;
+          height: 30px;
+        }
+      }
+    }
+    .education {
+      // bufferzone
+      .bufferzone {
+        background-image: url(../images/background.jpg);
+        background-size: cover;
+        background-position: bottom;
+        background-attachment: fixed;
+        height: 200px;
+      }
+
+      // Education
+      #education {
+
+
+        .subDetails {
+          font-weight: bold;
+        }
+      }
+    }
+
+    #hobbies {
+
+    }
+    .projects {
+      .outdoor {
+        a {
+        text-decoration: none;
+          h5 {
+            font-family: 'Monoton', cursive;
+            text-shadow: 2px 2px 1px #000000b5;
+            color: #ffffff45;
+            font-size: 30px;
+            background-image: url(../images/mountain1.jpg);
+            width: 300px;
+          }
+        }
+      }
+    }
+    // carousel
+    .carousel-container {
+      max-width: 1510px;
+      .carousel {
+        background-color: #e288bc;
+        box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .125);
+        height: 200px;
+        margin: auto;
+        overflow:hidden;
+        position: relative;
+        width: 100%;
+
+        &::before,
+        &::after {
+          background: linear-gradient(to right,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+          content: "";
+          height: 200px;
+          position: absolute;
+          width: 200px;
+          z-index: 2;
+        }
+
+        &::after {
+          right: 0;
+          top: 0;
+          transform: rotateZ(180deg);
+        }
+
+        &::before {
+          left: 0;
+          top: 0;
+        }
+
+        .slide-track {
+          animation: scroll 40s linear infinite;
+          display: flex;
+          width: calc(350px * 8);
+          // Animation
+          @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-350px * 4))}
+          }
+        }
+
+        .slide {
+          height: 200px;
+          width: 350px;
+        }
+      }
+    }
+
+  }
+}
+//////////////////////////////////////
+
+//////////////////////////////////////
+@media only screen and (min-width: 800px) {
+  body {
+    header {
+      height: 40em;
+      h1 {
+        text-align: center;
+        padding: 5em;
+        font-size: 3em;
+      }
+      .contact {
+        margin-left: 81%;
+        margin-top: -136px;
+      }
+    }
+    #navbar {
+      height: 75px;
+    }
+    section {
+      #about {
+        width: 50%;
+        margin: 0 auto;
+      }
+      #skills {
+        .Title {
+          margin: 0 auto;
+          text-align: center;
+        }
+      }
+      .education {
+        #education {
+          width: 70%;
+          margin: 0 auto;
+          display: grid;
+          grid-template-areas:
+          'header header'
+          'section1 section2';
+          .Title {
+            grid-area: header;
+          }
+          #tertiary {
+            grid-area: section1;
+          }
+          #secondary {
+            grid-area: section2;
+          }
+        }
+      }
+      #hobbies {
+        width: 50%;
+        margin: 40px auto;
+      }
+      .projects {
+        display: grid;
+        grid-template-areas:
+        'header header'
+        'section1 section2';
+        width: 50%;
+        margin: 0 auto;
+        h2 {
+          grid-area: header;
+        }
+        .outdoor {
+          grid-area: section1;
+          h5 {
+            margin-top: 6px;
+          }
+        }
+        .code4 {
+          grid-area: section2;
+        }
+      }
+    }
+  }
+}
+/////////////////////////////////
