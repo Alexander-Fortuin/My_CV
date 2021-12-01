@@ -1,0 +1,19 @@
+@mixin topLeftRaduis {
+    border-radius: 80px;
+    // border-top-left-radius: 40%;
+    // border-bottom-right-radius: 40%;
+}
+
+@mixin topRightRaduis {
+    border-radius: 80px;
+    // border-top-right-radius: 40%;
+    // border-bottom-left-radius: 40%;
+}
+@mixin gradientOne {
+    background: linear-gradient(#88b6e2, #bb34bd);
+}
+@mixin gradientOneReverse {
+    background: linear-gradient(#bb34bd, #88b6e2);
+}
+
+// list-style-type: none;
